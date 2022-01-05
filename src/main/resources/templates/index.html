@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<input type = "button" name = "getallproduct" id = "getallproduct" value = "GETALLPRODUCT" onclick = "getDataFromApi();" />
+<input type = "button" name = "addproduct" id = "addproduct" value = "ADDPRODUCT" onclick="postDataFromApi();"/>
+<input type = "text" name = "name" id = "name" />
+<input type = "text" name = "price" id = "price" />
+<input type = "text" name = "quantity" id = "quantity" />
+
+<script>
+    function getDataFromApi()
+    {
+        $.ajax({
+            url:"/api/product/getallproduct" ,
+            type : "GET" ,
+            success : function (data) {
+                console.log("id" + data.id);
+                console.log("name" + data.name);
+                console.log("price" + data.price);
+                console.log("quantity" + data.quantity);
+            }
+        });
+    }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
